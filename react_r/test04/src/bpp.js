@@ -6,9 +6,9 @@ class Bpp extends Component {
         return (
             <div>
                 <h1>{this.props.num}</h1>
-                 <button onClick={this.props.onMyClick}>bnt</button>        
+                 {/* <button onClick={this.props.onMyClick}>bnt</button>         */}
                 <h1>{this.props.age}</h1>
-                 <button onClick={this.props.onAgeClick}>bnt</button> 
+                 {/* <button onClick={this.props.onAgeClick}>bnt</button>  */}
             </div>
         );
     }
