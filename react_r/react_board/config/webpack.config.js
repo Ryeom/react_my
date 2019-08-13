@@ -646,5 +646,12 @@ module.exports = function(webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
+    devServer:{ //dev server 추가
+      port:3000,
+      open:true,
+      proxy:{
+        "/":"http://localhost"
+      }
+    },
   };
 };
