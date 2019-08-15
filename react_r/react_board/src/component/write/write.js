@@ -6,7 +6,6 @@ class Write extends Component {
     //  height: 500px;
 
     render() {
-        const height = 'height:500px'
         return (
             <div> 
       <div className="container py-5 mb5">
@@ -14,37 +13,43 @@ class Write extends Component {
             <div className="row py-4">
             <div className="col-md-4 order-md-2 mb-4">
                     <h4 className="d-flex justify-content-between align-items-center mb-3">
-                        <span className="text-muted">Your cart</span>
-                        <span className="badge badge-primary badge-pill">3</span>
+                        <span className="text-muted">Option</span>
+                        <div className="btn-group btn-group-toggle" data-toggle="buttons">
+    <label className="btn btn-outline-primary">
+      <input type="checkbox" /> important
+    </label>
+  </div>
                     </h4>
                     <ul className="list-group mb-3">
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 className="my-0">Product name</h6>
-                                <small className="text-muted">Brief description</small>
-                            </div>
-                            <span className="text-muted">$12</span>
+                    <li className="list-group-item d-flex justify-content-between lh-condensed">
+                        <input className="form-control" type="date" id="example-date-input"/>
                         </li>
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 className="my-0">Second product</h6>
-                                <small className="text-muted">Brief description</small>
-                            </div>
-                            <span className="text-muted">$8</span>
+                        <select className="custom-select">
+  <option >업무 유형을 선택</option>
+  <option value="1">일간 업무</option>
+  <option value="2">회의 일지</option>
+  <option value="3">출장 일지</option>
+</select>
                         </li>
+                       
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 className="my-0">Third item</h6>
-                                <small className="text-muted">Brief description</small>
-                            </div>
-                            <span className="text-muted">$5</span>
+                        <select className="custom-select">
+  <option>소속을 선택</option>
+  <option value="1">인사</option>
+  <option value="2">재무</option>
+  <option value="3">개발</option>
+  <option value="4">영업</option>
+  <option value="5">생산</option>
+  <option value="6">R &amp;D</option>
+</select>
                         </li>
                         <li className="list-group-item d-flex justify-content-between">
-                            <span>Total (USD)</span>
-                            <strong>$20</strong>
+                           
                         </li>
                     </ul>
-                    <a href="#!" class="btn btn-primary btn-block">Block level button</a>
+       
+                    <a href="#!" className="btn btn-primary btn-block">Block level button</a>
                 </div>
 
 
@@ -55,9 +60,9 @@ class Write extends Component {
 
                 <div className="col-md-8 order-md-1">
                     <h4 className="mb-3">Please Write Your 업무일즤써듀셈</h4>
-                    <form className="needs-validation" novalidate>
+                   
                         <div className="mb-3">
-                            <label for="username">Id 업무일지 작성자</label>
+                            <label>Id 업무일지 작성자</label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text">@</span>
@@ -69,13 +74,12 @@ class Write extends Component {
                             </div>
                         </div>
                         <div className="mb-3">
-                            <label for="username">업무 내용 </label>
+                            <label>업무 내용 </label>
                         <textarea className="textarea form-control"></textarea>
                             
                         </div>
 
 
-                    </form>
                 </div>
             </div>
         </div>

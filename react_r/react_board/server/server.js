@@ -1,16 +1,15 @@
 const express = require('express')
 const path = require('path')
-const os = require('os')
 const router = require('./routes/route')
 
 const app = express()
-var cors = require('cors');
+const cors = require('cors');
 const PORT = process.env.PORT || 5000
-app.set('port', PORT)
 const morgan = require('morgan')
 // install cors 로 설치 하였기 때문에 cors 모듈 require
 
 // cors () 사용  // 모든 도메인에 대한 Request 활성화  -> 좋지 않은 방식 
+app.set('port', PORT)
 app.use(cors());
 app.use(express.static(path.join(__dirname, '..', 'public/')))
 app.use('/', router)
@@ -19,11 +18,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-app.get('/api/getUsername', (req, res, next) => {
-    res.send({
-        username: os.userInfo().username
-    })
-})
+
 app.use(morgan('combined'))
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

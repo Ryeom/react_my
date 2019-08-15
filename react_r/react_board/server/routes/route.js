@@ -1,20 +1,14 @@
 const express = require('express')
-const os = require('os')
 const router = express.Router()
 const mysql = require('../databaseConnection')
 
 
-router.get('/api/getUsername', (req, res, next) => {
-    res.send({
-        username: os.userInfo().username
-    })
-})
 
 
-router.get('/member', (req, res) => {
+router.get('/test', (req, res) => {
     console.log('ㅎㅇ');
     
-    mysql.query(`select * from member_tb`, (err, rows) => {
+    mysql.query(`select * from test`, (err, rows) => {
         if (!err) {
             console.log(`hi! mysql`, rows);
             

@@ -20,14 +20,14 @@ export function Navbar(props) {
           </div>
           
         </div>
-        <form class="form-inline">
-  <label class="sr-only" for="inlineFormInputGroup">Username</label>
-  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="id"/>
-    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="passward"/>
+        <form className="form-inline">
+  <label className="sr-only" >Username</label>      {/* for="inlineFormInputGroup" */}
+  <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+    <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="id"/>
+    <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="passward"/>
   </div>
 
-  <button type="submit" class="btn btn-primary">Go</button>
+  <button type="submit" className="btn btn-primary">Go</button>
 </form>
       </nav>
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-//import logo from './logo.svg';
+// import logo from './logo.svg';
 import './bootstrap4-neon-glow.css'
 import './bootstrap4-neon-glow.min.css'
 import axios from 'axios'
@@ -24,8 +24,7 @@ class App extends Component {
 
   async componentDidMount() {
     
-    let result = await axios.get('/member')
-   // const data = result.data
+    let result = await axios.get('/test')
    console.log(result);
    
     this.setState({ result :result.data })
@@ -38,11 +37,11 @@ class App extends Component {
     const { result } = this.state
     console.log(result);
     
-    const getuserid = result.map((value,key)=>{
-      return <div key={key}>
-        <h5>id {value.userid} name {value.username}</h5>
-      </div>
-    })
+    // const getuserid = result.map((value,key)=>{
+    //   return <div key={key}>
+    //     <h5>id {value.userid} name {value.username}</h5>
+    //   </div>
+    // })
   
     return (
       <div>

@@ -2,11 +2,27 @@ import React, { Component } from 'react';
 import Contract from './contract';
 
 class Signup extends Component {
+    state = {
+        id : '',
+        name : '',
+        pw1 : '',
+        pw2 : '',
+        email : '',
+        dept : '',
+    }
+    handleChange = (e)=>{               //값을 받아서 여기 state에 넣음
+        const { value } = e.target
+        this.setState({
+            ...this.state,
+            [e.target.name] : value,
+        })
+    }
 
+    signUpSubmit =  () =>{
+        
+    }
 
     render() {
-
-
         return (
 
             <div>
@@ -49,7 +65,7 @@ class Signup extends Component {
     
                             
                             
-                    <a href="#!" class="btn btn-primary btn-block">Block level button</a>
+                    <a href="#!" className="btn btn-primary btn-block">Submit</a>
                             
                         
     
@@ -58,14 +74,23 @@ class Signup extends Component {
     
                 <div className="col-md-8 order-md-1">
                     <h4 className="mb-3">Please Write Your information</h4>
-                    <form className="needs-validation" novalidate>
+                    <form className="needs-validation" >
+                    <div className="mb-3">
+                            <label>Id </label>
+                            <div className="input-group">
+                                <input type="text" className="form-control" name="username" placeholder="Username" required/>
+                                <div className="invalid-feedback" >
+                                    Your username is required.
+                                </div>
+                            </div>
+                        </div>
                         <div className="mb-3">
-                            <label for="username">Id </label>
+                            <label>name </label>
                             <div className="input-group">
                                 <div className="input-group-prepend">
                                     <span className="input-group-text">@</span>
                                 </div>
-                                <input type="text" className="form-control" id="username" placeholder="Username" required/>
+                                <input type="text" className="form-control" name="userid" placeholder="Username" required/>
                                 <div className="invalid-feedback" >
                                     Your username is required.
                                 </div>
@@ -73,15 +98,15 @@ class Signup extends Component {
                         </div>
                         <div className="row">
                             <div className="col-md-6 mb-3">
-                                <label for="firstName">pw</label>
-                                <input type="text" className="form-control" id="firstName" placeholder="" value="" required/>
+                                <label>pw</label>
+                                <input type="text" className="form-control" name="pw1" placeholder="" required/>
                                 <div className="invalid-feedback">
                                     Valid first name is required.
                                 </div>
                             </div>
                             <div className="col-md-6 mb-3">
-                                <label for="lastName">pw2</label>
-                                <input type="text" className="form-control" id="lastName" placeholder="" value="" required/>
+                                <label>pw2</label>
+                                <input type="text" className="form-control" name="pw2" placeholder=""  required/>
                                 <div className="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -90,12 +115,30 @@ class Signup extends Component {
     
     
                         <div className="mb-3">
-                            <label for="email">Email <span className="text-muted">(Optional)</span></label>
-                            <input type="email" className="form-control" id="email" placeholder="you@example.com"/>
+                            <label>Email <span className="text-muted">(Optional)</span></label>
+                            <input type="email" className="form-control" name="useremail" placeholder="you@example.com"/>
                             <div className="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
+
+
+
+                        <div className="mb-3">
+            <label>소속 부서</label>
+            <select className="custom-select d-block w-100" name="dept" required>
+            <option>소속을 선택</option>
+  <option value="1">인사</option>
+  <option value="2">재무</option>
+  <option value="3">개발</option>
+  <option value="4">영업</option>
+  <option value="5">생산</option>
+  <option value="6">R &amp;D</option>
+            </select>
+            <div className="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
                     </form>
                 </div>
             </div>

@@ -202,12 +202,13 @@ button:focus {
 input,
 button,
 select,
-optgroup,
-textarea {
+optgroup {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
-  line-height: inherit; }
+  line-height: inherit; 
+}
+
 
 button,
 input {
@@ -251,9 +252,15 @@ input[type="datetime-local"],
 input[type="month"] {
   -webkit-appearance: listbox; }
 
-textarea {
+textarea {/*수정쓰*/
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit; 
+    height: 500px;
   overflow: auto;
-  resize: vertical; }
+  resize: vertical; 
+}
 
 fieldset {
   min-width: 0;
@@ -1856,7 +1863,7 @@ select.form-control[size], select.form-control[multiple] {
   height: auto; }
 
 textarea.form-control {
-  height: auto; }
+  height: 500px; }
 
 
 
