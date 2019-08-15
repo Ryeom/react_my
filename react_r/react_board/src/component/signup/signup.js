@@ -3,11 +3,11 @@ import Contract from './contract';
 
 class Signup extends Component {
     state = {
-        id : '',
-        name : '',
+        userid : '',
+        username : '',
         pw1 : '',
         pw2 : '',
-        email : '',
+        useremail : '',
         dept : '',
     }
     handleChange = (e)=>{               //값을 받아서 여기 state에 넣음
@@ -18,6 +18,7 @@ class Signup extends Component {
             ...this.state,
             [e.target.name] : value,
         })
+        
     }
 
     signUpSubmit =  () =>{
@@ -25,6 +26,8 @@ class Signup extends Component {
     }
 
     render() {
+        console.log(this.state);
+        
         return (
 
             <div>
@@ -80,7 +83,7 @@ class Signup extends Component {
                     <div className="mb-3">
                             <label>Id </label>
                             <div className="input-group">
-                                <input type="text" className="form-control" onChange={this.handleChange} name="username" placeholder="Username" required/>
+                                <input type="text" className="form-control" onChange={this.handleChange} name="userid" placeholder="Username" required/>
                                 <div className="invalid-feedback" >
                                     Your username is required.
                                 </div>
@@ -92,7 +95,7 @@ class Signup extends Component {
                                 <div className="input-group-prepend">
                                     <span className="input-group-text">@</span>
                                 </div>
-                                <input type="text" className="form-control" name="userid" placeholder="Username" required/>
+                                <input type="text" className="form-control" onChange={this.handleChange} name="username" placeholder="Username" required/>
                                 <div className="invalid-feedback" >
                                     Your username is required.
                                 </div>
@@ -101,14 +104,14 @@ class Signup extends Component {
                         <div className="row">
                             <div className="col-md-6 mb-3">
                                 <label>pw</label>
-                                <input type="text" className="form-control" name="pw1" placeholder="" required/>
+                                <input type="text" className="form-control" onChange={this.handleChange} name="pw1" placeholder="" required/>
                                 <div className="invalid-feedback">
                                     Valid first name is required.
                                 </div>
                             </div>
                             <div className="col-md-6 mb-3">
                                 <label>pw2</label>
-                                <input type="text" className="form-control" name="pw2" placeholder=""  required/>
+                                <input type="text" className="form-control" onChange={this.handleChange} name="pw2" placeholder=""  required/>
                                 <div className="invalid-feedback">
                                     Valid last name is required.
                                 </div>
@@ -118,7 +121,7 @@ class Signup extends Component {
     
                         <div className="mb-3">
                             <label>Email <span className="text-muted">(Optional)</span></label>
-                            <input type="email" className="form-control" name="useremail" placeholder="you@example.com"/>
+                            <input type="email" className="form-control" onChange={this.handleChange} name="useremail" placeholder="you@example.com"/>
                             <div className="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
@@ -128,7 +131,7 @@ class Signup extends Component {
 
                         <div className="mb-3">
             <label>소속 부서</label>
-            <select className="custom-select d-block w-100" name="dept" required>
+            <select className="custom-select d-block w-100" onChange={this.handleChange} name="dept" required>
             <option>소속을 선택</option>
   <option value="1">인사</option>
   <option value="2">재무</option>
