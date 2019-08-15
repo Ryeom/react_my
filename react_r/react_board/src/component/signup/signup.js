@@ -12,6 +12,8 @@ class Signup extends Component {
     }
     handleChange = (e)=>{               //값을 받아서 여기 state에 넣음
         const { value } = e.target
+        console.log(value);
+        
         this.setState({
             ...this.state,
             [e.target.name] : value,
@@ -78,7 +80,7 @@ class Signup extends Component {
                     <div className="mb-3">
                             <label>Id </label>
                             <div className="input-group">
-                                <input type="text" className="form-control" name="username" placeholder="Username" required/>
+                                <input type="text" className="form-control" onChange={this.handleChange} name="username" placeholder="Username" required/>
                                 <div className="invalid-feedback" >
                                     Your username is required.
                                 </div>
