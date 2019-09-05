@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 //import Bpp from './bpp'
 //import Compo1 from './compo1'
+import mapActionToProps from './store/action/action'
 class App extends Component {
   
   render() {
@@ -60,81 +61,6 @@ const Cpp = ({children}) => {
   );
 };
 
-export const mapActionToProps = (dispatch)=>{  
-  //console.log(`>>>>>>action`);
-  return {
-    onMyClick : ()=>{
-      console.log(`asdf`);
-        dispatch({
-          type: 'MYCLICK',
-        })
-      },
-      onDEC : ()=>{
-        console.log(`dec`);
-        dispatch({
-          type:`DEC`,
-        })
-      },
-      onStrChange : ()=>{
-        console.log(`sdf`);
-        dispatch({
-          type:`STRCHANGE`,
-        })
-      }
-
-  }
-}
-export function reducer(state = {
-  num:0,
-  str :``
-}
-,action ){ 
-  switch (action.type) {
-    // TODO
-    //--------------------------------------------------------------//
-    case 'MYCLICK':
-      console.log(`myclick`);
-      state = {
-        ...state,
-        num : state.num+1,
-      }
-      return state 
-      case 'DEC':
-          console.log(`myclick`);
-          state = {
-            ...state,
-            num : state.num+1,
-          }
-          return state 
-
-          case 'STRCHANGE':
-          console.log(`myclick`);
-          state = {
-            ...state,
-            str : state.str
-          }
-          return state 
-
-    //--------------------------------------------------------------//
-    // case 'MYCLICK':
-    //   state = {
-    //     ...state,
-    //     num : state.num +1,
-    //   }
-    //   return state 
-    //--------------------------------------------------------------//
-    // case 'AGECLICK':
-    //   state = {
-    //     ...state,
-    //     age : state.age +1,
-    //   }
-    //   return state
-    //--------------------------------------------------------------//
-    default:  return state
-  }                                
-
-
-}
 const mapStateToProps = (state)=>{
   //console.log(`>>>>>>>>>>>stateTo`);
   return { 

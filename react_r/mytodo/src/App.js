@@ -58,6 +58,12 @@ class App extends Component {
       ]
     })
   }
+
+  ajaxTest = ()=>{
+    const xhr = new XMLHttpRequest()
+    let str = `asdftasdft`
+    xhr.send(str)
+  }
   render(){
     const { input, todos } = this.state
     const { handleChange, handleInsert, handleToggle, handleRemove } = this

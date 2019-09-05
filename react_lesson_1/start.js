@@ -41,3 +41,6 @@ create-react-app %projectname% && cd %projectname% && npm start
  >> npm install axios --save
  
  */
+
+
+ ///1002 932 002235 우리
